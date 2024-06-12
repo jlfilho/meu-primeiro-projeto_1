@@ -1,11 +1,12 @@
 <section>
   <form>
-    <input type="text" placeholder="Filtre a cidade">
-    <button class="primary" type="button">Buscar</button>
+    <input type="text" placeholder="Filtre a cidade" #filter>
+    <button class="primary" type="button"
+    (click)="filterResults(filter.value)">Buscar</button>
   </form>
 </section>
 <section class="results">
     <app-housing-location
-    *ngFor="let casa of casas"
+    *ngFor="let casa of casasFiltradas"
     [housingLocation]="casa"> </app-housing-location>
 </section>
